@@ -20,7 +20,7 @@ int main()
     Days.push_back(new Day11()); //part 1 describes a list, part 2 uses all your ram, so you change to a frequency map.
     Days.push_back(new Day12()); 
     Days.push_back(new Day13()); //uses eigen for linear system solve with matrices
-    Days.push_back(new Day14());
+    Days.push_back(new Day14()); //Treeeee
     Days.push_back(new Day15());
     Days.push_back(new Day16());
     Days.push_back(new Day17());
@@ -64,6 +64,6 @@ int main()
 
     std::cout << std::endl << "Total time: " << std::chrono::duration_cast<std::chrono::milliseconds>(totalfinish - totalstart).count() << "ms" << std::endl;
     system("pause");
-    return 1;
+    return 0;
 }
 

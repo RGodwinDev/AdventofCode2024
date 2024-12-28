@@ -7,7 +7,7 @@
 
 class Day14 : public Day {
 private:
-	void move(std::pair<std::pair<int, int>, std::pair<int, int>>* bot, int* width, int* height);
+	void move(std::pair<std::pair<int, int>, std::pair<int, int>>& bot, int* width, int* height);
 public:
 	int run();
 };

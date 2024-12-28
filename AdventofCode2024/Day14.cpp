@@ -35,7 +35,7 @@ int Day14::run() {
 	for (int i = 0; i < 100; ++i) {
 		//move the bots
 		for (std::pair<std::pair<int, int>, std::pair<int, int>>& b : swarm) {
-			move(&b, &width, &height);
+			move(b, &width, &height);
 		}
 	}
 
@@ -45,7 +45,7 @@ int Day14::run() {
 	int quad3 = 0;
 	int quad4 = 0;
 
-	for (std::pair<std::pair<int, int>, std::pair<int, int>> b : swarm) {
+	for (std::pair<std::pair<int, int>, std::pair<int, int>>& b : swarm) {
 		//center isnt in any quadrant
 		//101 wide, 103 tall, so 50th and 51st
 		if (b.first.first == width / 2 || b.first.second == height / 2) {
@@ -83,7 +83,7 @@ int Day14::run() {
 		std::vector<int> wide(101,0);
 		std::vector<int> tall(103,0);
 		for (std::pair<std::pair<int, int>, std::pair<int, int>>& b : swarm) {
-			move(&b, &width, &height);
+			move(b, &width, &height);
 			wide[b.first.first]++;
 			tall[b.first.second]++;
 		}
@@ -127,22 +127,20 @@ int Day14::run() {
 		}
 	}
 
-
-
 	std::cout << "14: " << result1 << " " << result2 << std::endl;
 	return 1;
 }
 
 
-void Day14::move(std::pair<std::pair<int, int>, std::pair<int, int>> *bot, int* width, int* height) {
-	bot->first.first += bot->second.first;
-	bot->first.second += bot->second.second;
-	if (bot->first.first < 0) {
-		bot->first.first += *width;
+void Day14::move(std::pair<std::pair<int, int>, std::pair<int, int>> &bot, int* width, int* height) {
+	bot.first.first += bot.second.first;
+	bot.first.second += bot.second.second;
+	if (bot.first.first < 0) {
+		bot.first.first += *width;
 	}
-	bot->first.first %= *width;
-	if (bot->first.second < 0) {
-		bot->first.second += *height;
+	bot.first.first %= *width;
+	if (bot.first.second < 0) {
+		bot.first.second += *height;
 	}
-	bot->first.second %= *height;
+	bot.first.second %= *height;
 }

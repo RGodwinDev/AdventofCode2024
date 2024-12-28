@@ -46,54 +46,42 @@ int Day15::run() {
 		moves += text;
 	}
 
-	int left = 0, right = 0, up = 0, down = 0;
-	int al = 0, ar = 0, au = 0, ad = 0;
-
 	// < > ^ v 
 	std::pair<int, int> pos = start;
-
+	//std::cout << pos.first << " " << pos.second << std::endl;
 	for (char move : moves) {
-		//std::cout << pos.first << " " << pos.second << std::endl;
+		//std::cout << move;
 		if (move == '<') {
-			//std::cout << "left" << std::endl;
-			al++;
 			if (checkLeft(pos, warehouse)) {
 				pos.second--;
-				left++;
+				warehouse[pos.first][pos.second].empty = true;
 			}
 		}
 		else if (move == '>') {
-			//std::cout << "right" << std::endl;
-			ar++;
 			if(checkRight(pos, warehouse)) {
 				pos.second++;
-				right++;
+				warehouse[pos.first][pos.second].empty = true;
 			}
 		}
 		else if (move == '^') {
-			//std::cout << "up" << std::endl;
-			au++;
 			if (checkUp(pos, warehouse)) {
 				pos.first--;
-				up++;
+				warehouse[pos.first][pos.second].empty = true;
 			}
 		}
 		else if (move == 'v') {
-			//std::cout << "down" << std::endl;
-			ad++;
 			if (checkDown(pos, warehouse)) {
 				pos.first++;
-				down++;
+				warehouse[pos.first][pos.second].empty = true;
 			}
 		}
 		else {
 			std::cout << "invalid move" << std::endl;
 		}
 	}
-
+	//std::cout << std::endl;
 	//get gps coords
 	for (int i = 0; i < warehouse.size(); ++i) {
-		//std::cout << warehouse[i].size() << std::endl;
 		for (int j = 0; j < warehouse[i].size(); ++j) {
 			Day15Node n = warehouse[i][j];
 			if (!(n.empty || n.rock)) {
@@ -104,27 +92,16 @@ int Day15::run() {
 			
 			/*
 			else if (n.empty) {
-				//std::cout << '-';
+				std::cout << '-';
 			}
 			else if (n.rock) {
-				//std::cout << '#';
+				std::cout << '#';
 			}
 			*/
 			
 		}
 		//std::cout << std::endl;
 	}
-
-	//this just confirms, the bot is actually moving
-	/*
-	std::cout << au << " " << ad << std::endl;
-	std::cout << up << " " << down << std::endl;
-	std::cout << ar << " " << al << std::endl;
-	std::cout << right << " " << left << std::endl;
-	std::cout << up - down << " " << right - left << std::endl;
-	std::cout << start.first << " " << start.second << std::endl;
-	std::cout << pos.first << " " << pos.second << std::endl;
-	*/
 
 	/*
 	//again for warehouse 2
@@ -149,6 +126,7 @@ bool Day15::checkUp(std::pair<int, int> pos, std::vector<std::vector<Day15Node>>
 	
 	if (warehouse[pos.first - 1][pos.second].empty) {
 		//std::cout << "empty!" << std::endl;
+		warehouse[pos.first - 1][pos.second].empty = false;
 		return true;
 	}
 	if (warehouse[pos.first - 1][pos.second].rock) {
@@ -168,6 +146,7 @@ bool Day15::checkUp(std::pair<int, int> pos, std::vector<std::vector<Day15Node>>
 bool Day15::checkDown(std::pair<int, int> pos, std::vector<std::vector<Day15Node>> &warehouse) {
 	if (warehouse[pos.first + 1][pos.second].empty) {
 		//std::cout << "empty!" << std::endl;
+		warehouse[pos.first + 1][pos.second].empty = false;
 		return true;
 	}
 	if (warehouse[pos.first + 1][pos.second].rock) {
@@ -188,6 +167,7 @@ bool Day15::checkDown(std::pair<int, int> pos, std::vector<std::vector<Day15Node
 bool Day15::checkLeft(std::pair<int, int> pos, std::vector<std::vector<Day15Node>>& warehouse) {
 	if (warehouse[pos.first][pos.second - 1].empty) {
 		//std::cout << "empty!" << std::endl;
+		warehouse[pos.first][pos.second - 1].empty = false;
 		return true;
 	}
 	if (warehouse[pos.first][pos.second - 1].rock) {
@@ -208,6 +188,7 @@ bool Day15::checkLeft(std::pair<int, int> pos, std::vector<std::vector<Day15Node
 bool Day15::checkRight(std::pair<int,int> pos, std::vector<std::vector<Day15Node>>& warehouse) {
 	if (warehouse[pos.first][pos.second + 1].empty) {
 		//std::cout << "empty!" << std::endl;
+		warehouse[pos.first][pos.second + 1].empty = false;
 		return true;
 	}
 	if (warehouse[pos.first][pos.second + 1].rock) {
