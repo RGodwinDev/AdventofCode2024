@@ -37,11 +37,11 @@ int Day13::run() {
 
 		getline(file, text);
 		//solving Linear equations using an inverse matrix
-		//A has an inverse if:
+		//Matrix A has an inverse if:
 		//A is square
 		//nonsingular (by definition, singular = no inverse)
 		//determinate = ad - bc, or in our case: x1y2 - x2y1
-		//if det(A) == 0, means our matrix is singular, so no inverse
+		//if det(A) == 0, our matrix is singular, no inverse
 		/* none actually got determined.
 		if (a.determinant() == 0) {
 			//std::cout << "determined" << std::endl;
@@ -79,9 +79,14 @@ int Day13::run() {
 }
 
 bool Day13::isNearInt(Eigen::Vector2d x) {
+	//this was consistently faster by like 100us
 	if (std::abs(x[0] - std::round(x[0])) > 1e-3 ||
 		std::abs(x[1] - std::round(x[1])) > 1e-3) {
 		return false;
 	}
 	return true;
+	/*
+	return std::abs(x[0] - std::round(x[0])) <= 1e-3 &&
+		std::abs(x[1] - std::round(x[1])) <= 1e-3;
+	*/
 }

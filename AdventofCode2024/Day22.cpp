@@ -36,7 +36,7 @@ int Day22::run() {
 			monkeySecrets[i] = ((monkeySecrets[i] >> 5) ^ monkeySecrets[i]) % 16777216;
 			monkeySecrets[i] = ((monkeySecrets[i] << 11) ^ monkeySecrets[i]) % 16777216;
 			banan.push_back(monkeySecrets[i] % 10);
-			sequence.push_back(banan[banan.size() - 1] % 10 - banan[banan.size() - 2] % 10);
+			sequence.push_back(banan[banan.size() - 1] - banan[banan.size() - 2]);
 		}
 
 		//insert the final 1996 values
@@ -54,14 +54,15 @@ int Day22::run() {
 			//add the last digit to banan values
 			banan.push_back(monkeySecrets[i] % 10);
 
-			sequence.push_back(banan[banan.size() - 1] % 10 - banan[banan.size() - 2] % 10);
+			//difference of last 2 values in banan
+			sequence.push_back(banan[banan.size() - 1] - banan[banan.size() - 2]);
 
 			//remove the front of the sequence
 			//release mode slows significantly if you dont do this (90+ seconds vs 2.5 seconds)
 			sequence.erase(sequence.begin());
 
 			std::string seq;
-			for (int i = sequence.size()-4; i < sequence.size(); ++i) {
+			for (int i = 0 /*sequence.size() - 4*/; i < sequence.size(); ++i) {
 				seq += std::to_string(sequence[i]);
 			}
 			
@@ -71,8 +72,10 @@ int Day22::run() {
 				bananas[sequence] += banan[banan.size() - 1];
 				//add this sequence to seen sequences.
 				sequences.insert(sequence);
-			}	
+			}
 			
+			//we convert to string so we can insert into sequences2, which is an unordered_set
+			//vector<int> can't be hashed, but a string can.
 			if (sequences2.find(seq) == sequences2.end()) {
 				//all bananas with this sequence get added together
 				bananas2[seq] += banan[banan.size() - 1];

@@ -3,7 +3,6 @@
 int Day25::run() {
 
 	int result1 = 0;
-	int result2 = 0;
 	std::vector<std::vector<int>> keys;
 	std::vector<std::vector<int>> locks;
 	std::fstream f("day25input.txt");
@@ -50,7 +49,6 @@ int Day25::run() {
 		}
 	}
 
-
-	std::cout << "25: " << result1 << " " << result2 << std::endl;
+	std::cout << "25: " << result1 << " Merry Christmas :) " << std::endl;
 	return 1;
 }
