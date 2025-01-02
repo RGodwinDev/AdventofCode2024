@@ -81,6 +81,6 @@ int Day24::run() {
 		}
 	}
 
-	std::cout << "24: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "24: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

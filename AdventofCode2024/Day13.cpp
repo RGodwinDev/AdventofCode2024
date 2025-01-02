@@ -73,8 +73,7 @@ int Day13::run() {
 			result2 += std::round(v2[1]);
 		}
 	}
-	
-	std::cout << "13: " << result1 << " " << (long long)result2 << std::endl;
+	std::cout << std::setw(4) << "13: " << std::setw(20) << result1 << " " << std::setw(20) << (long long)result2 << std::endl;
 	return 1;
 }
 

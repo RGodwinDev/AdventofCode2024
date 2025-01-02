@@ -13,7 +13,6 @@ int Day15::run() {
 
 	while (getline(f, text) && walls < 2) {
 		std::vector<Day15Node> wareRow;
-
 		std::vector<char> wareRow2;
 		int sharp = 0;
 		for (int i = 0; i < text.size(); ++i) {
@@ -167,8 +166,7 @@ int Day15::run() {
 	std::cout << std::endl;
 	*/
 
-	std::cout << "15: " << result1 << " " << result2 << std::endl;
-
+	std::cout << std::setw(4) << "15: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }
 

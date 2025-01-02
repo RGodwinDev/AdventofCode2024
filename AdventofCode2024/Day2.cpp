@@ -152,8 +152,7 @@ int Day2::run() {
 		}
 	}
 	
-
-	std::cout << "2: " << safeA << " " << safeB << std::endl;
+	std::cout << std::setw(4) << "2: " << std::setw(20) << safeA << " " << std::setw(20) << safeB << std::endl;
 
 	return 1;
 }

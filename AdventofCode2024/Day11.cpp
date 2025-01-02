@@ -91,8 +91,7 @@ int Day11::run() {
 	for (auto n : m) {
 		result2 += n.second;
 	}
-
-	std::cout << "11: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "11: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }
 

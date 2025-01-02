@@ -36,6 +36,6 @@ int Day1::run() {
 		else { r++; } //left is bigger
 	}
 
-	std::cout << "1: " << result1 << "  " << result2 << std::endl;
+	std::cout << std::setw(4) << "1: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

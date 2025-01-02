@@ -10,4 +10,5 @@ class Day16 : public Day {
 private:
 public:
 	int run();
+	int part1dijkstras(std::vector<std::vector<Day16Vert>>& map, std::pair<int, int> start);
 };

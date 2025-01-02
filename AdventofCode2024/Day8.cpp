@@ -65,7 +65,6 @@ int Day8::run() {
 		}
 	}
 	result2 = antinodes2.size();
-
-	std::cout << "8: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "8: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

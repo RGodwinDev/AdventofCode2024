@@ -12,8 +12,10 @@ int Day18::run() {
 	}
 	//grid 0 to 70 (71 tall/wide)
 
-
-
-	std::cout << "18: " << result1 << " " << result2.first << "," << result2.second << std::endl;
+	std::string result2s = "";
+	result2s += std::to_string(result2.first);
+	result2s += ',';
+	result2s += std::to_string(result2.second);
+	std::cout << std::setw(4) << "18: " << std::setw(20) << result1 << " " << std::setw(20) << result2s << std::endl;
 	return 1;
 }

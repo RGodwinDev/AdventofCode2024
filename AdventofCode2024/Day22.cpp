@@ -92,7 +92,6 @@ int Day22::run() {
 	for (auto p : bananas2) {
 		result2 = std::max(p.second, result2);
 	}
-
-	std::cout << "22: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "22: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

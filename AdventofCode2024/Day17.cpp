@@ -4,7 +4,7 @@ int Day17::run() {
 	std::fstream f("day17input.txt");
 	std::string text;
 	std::string result1 = "";
-	std::string result2 = "";
+	std::string result2 = "0";
 	std::regex pattern(R"(\d+)");
 	std::regex_token_iterator<std::string::iterator> rend;
 
@@ -89,7 +89,6 @@ int Day17::run() {
 		ip += 2;
 	}
 	//the program has ended
-
-	std::cout << "17: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "17: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

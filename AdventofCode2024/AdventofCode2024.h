@@ -3,6 +3,7 @@
 #include <iostream>
 #include <chrono>
 #include <vector>
+#include <windows.h>
 
 #include "Day1.h"
 #include "Day2.h"

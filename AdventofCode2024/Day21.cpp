@@ -21,7 +21,6 @@ int Day21::run() {
 		codes.push_back(text);
 	}
 
-
-	std::cout << "21: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "21: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

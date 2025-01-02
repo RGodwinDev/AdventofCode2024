@@ -69,7 +69,7 @@ int Day5::run() {
 		result2 += line[line.size() / 2];
 	}
 
-	std::cout << "5: " << result1 << " " << result2 << std::endl;
+	std::cout << std::setw(4) << "5: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }
 

@@ -48,7 +48,7 @@ int Day25::run() {
 			}
 		}
 	}
-
-	std::cout << "25: " << result1 << " Merry Christmas :) " << std::endl;
+	std::string result2 = "Merry Christmas :)";
+	std::cout << std::setw(4) << "25: " << std::setw(20) << result1 << " " << std::setw(20) << result2 << std::endl;
 	return 1;
 }

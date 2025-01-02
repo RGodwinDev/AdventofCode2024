@@ -3,6 +3,9 @@
 
 int main()
 {
+    HANDLE hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
     std::cout << "Advent of code 2024 :)" << std::endl;
     std::cout << "Check out rgodwin.dev" << std::endl;
     std::vector<Day*> Days;
@@ -32,8 +35,7 @@ int main()
     Days.push_back(new Day23());
     Days.push_back(new Day24());
     Days.push_back(new Day25()); //brute force forloops
-
-    std::cout << "------Results-------" << std::endl;
+    std::cout << "Problem Results    Part1                Part2" << std::endl;
 
     auto totalstart = std::chrono::high_resolution_clock::now();
     std::vector<std::chrono::microseconds> times;
@@ -52,13 +54,19 @@ int main()
     std::cout << "anything under 400us is probably not actually doing anything" << std::endl;
     for (int i = 0; i < times.size(); ++i) {
         if (times[i].count() > 10000000) {
-            std::cout << "day " << i + 1 << ": " << times[i].count() / 1000000 << "seconds" << std::endl;
+            SetConsoleTextAttribute(hConsole, 04);
+            std::cout << "day " << std::setw(2) << i + 1 << ": " << std::setw(4) << times[i].count() / 1000000 << "seconds" << std::endl;
+            SetConsoleTextAttribute(hConsole, 07);
         }
         else if (times[i].count() > 10000) {
-            std::cout << "day " << i + 1 << ": " << times[i].count() / 1000 << "ms" << std::endl;
+            SetConsoleTextAttribute(hConsole, 06);
+            std::cout << "day " << std::setw(2) << i + 1 << ": " << std::setw(4) << times[i].count() / 1000 << "ms" << std::endl;
+            SetConsoleTextAttribute(hConsole, 07);
         }
         else {
-            std::cout << "day " << i + 1 << ": " << times[i].count() << "us" << std::endl;
+            SetConsoleTextAttribute(hConsole, 02);
+            std::cout << "day " << std::setw(2) << i + 1 << ": " << std::setw(4) << times[i].count() << "us" << std::endl;
+            SetConsoleTextAttribute(hConsole, 07);
         }
     }
 
