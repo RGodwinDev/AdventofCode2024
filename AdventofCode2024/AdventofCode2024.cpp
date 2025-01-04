@@ -49,7 +49,7 @@ int main()
     auto totalfinish = std::chrono::high_resolution_clock::now();
 
     std::cout << std::endl << "---------Times---------" << std::endl;
-    std::cout << "This includes reading the input and running part 1 and part 2" << std::endl;
+    std::cout << "This includes reading the input and running part 1 and part 2" << std::endl; 
     std::cout << "10k us -> 10ms, 10mil us -> 10sec" << std::endl;
     std::cout << "anything under 400us is probably not actually doing anything" << std::endl;
     for (int i = 0; i < times.size(); ++i) {

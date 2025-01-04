@@ -26,6 +26,7 @@ int Day24::run() {
 		ss >> result;
 
 		if (m.find(result) == m.end()) {
+			//if first or second arent in the map, put in queue to be solved later
 			if (m.find(first) == m.end() || m.find(second) == m.end()) {
 				q.push(s);
 				continue;
@@ -56,8 +57,9 @@ int Day24::run() {
 		ss >> arrow;
 		std::string result;
 		ss >> result;
-
+		
 		if (m.find(result) == m.end()) {
+			//if theyre still not in the map, put them back in queue
 			if (m.find(first) == m.end() || m.find(second) == m.end()) {
 				q.push(s2);
 				continue;

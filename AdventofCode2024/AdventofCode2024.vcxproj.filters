@@ -97,6 +97,9 @@
     <Filter Include="Source Files\Day25">
       <UniqueIdentifier>{cd5c7675-1b16-41bd-b307-c6c6bed65dab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\images">
+      <UniqueIdentifier>{c9b1ecf5-67c5-4bc5-9af2-f3488acaf637}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day.cpp">
@@ -376,5 +379,19 @@
     <Text Include="day25input.txt">
       <Filter>inputs</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\AoCResults.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\AoCStars.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="images\AoCTimes.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

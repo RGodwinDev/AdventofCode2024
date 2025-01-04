@@ -225,6 +225,14 @@
     <Text Include="day8input.txt" />
     <Text Include="day9input.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\AoCResults.png" />
+    <Image Include="images\AoCStars.png" />
+    <Image Include="images\AoCTimes.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
