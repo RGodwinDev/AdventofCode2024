@@ -384,13 +384,13 @@
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="images\AoCResults.png">
-      <Filter>Resource Files\images</Filter>
-    </Image>
     <Image Include="images\AoCStars.png">
       <Filter>Resource Files\images</Filter>
     </Image>
-    <Image Include="images\AoCTimes.png">
+    <Image Include="..\..\..\..\OneDrive\Pictures\Screenshots\AoCResults.png">
+      <Filter>Resource Files\images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\OneDrive\Pictures\Screenshots\AoCTimes.png">
       <Filter>Resource Files\images</Filter>
     </Image>
   </ItemGroup>

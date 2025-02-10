@@ -229,9 +229,9 @@
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="images\AoCResults.png" />
+    <Image Include="..\..\..\..\OneDrive\Pictures\Screenshots\AoCResults.png" />
+    <Image Include="..\..\..\..\OneDrive\Pictures\Screenshots\AoCTimes.png" />
     <Image Include="images\AoCStars.png" />
-    <Image Include="images\AoCTimes.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
