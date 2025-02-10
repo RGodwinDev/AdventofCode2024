@@ -10,6 +10,7 @@
 
 class Day18 : public Day {
 private:
+	int bfs(std::vector<std::vector<int>>& grid);
 public:
 	int run();
 };
